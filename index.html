@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atelier Haven — Interior Design Studio</title>
+<meta name="description" content="Atelier Haven creates refined, functional and personalized interiors for modern living.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#22211f;--muted:#6f6b64;--paper:#f5f2eb;--cream:#ebe5d9;--line:#d9d2c5;--accent:#a78356;--white:#fff;--max:1240px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+a{text-decoration:none;color:inherit}.container{width:min(var(--max),calc(100% - 48px));margin:auto}
+.nav{position:fixed;z-index:20;top:0;left:0;right:0;padding:20px 0;transition:.3s}.nav.scrolled{background:rgba(245,242,235,.92);backdrop-filter:blur(16px);padding:13px 0;box-shadow:0 8px 30px #0000000b}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}.logo{font-family:"Playfair Display",serif;font-size:25px;letter-spacing:.04em}.logo span{font-family:"DM Sans";font-size:9px;display:block;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-top:-4px}
+.links{display:flex;gap:30px;font-size:13px;color:#4e4a44}.links a{position:relative}.links a:after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--ink);transition:.25s}.links a:hover:after{width:100%}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border:1px solid var(--ink);font-size:12px;font-weight:600;letter-spacing:.04em;transition:.25s}.btn.dark{background:var(--ink);color:white}.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px #00000012}.menu{display:none;background:none;border:0;font-size:24px}
+.hero{min-height:100vh;display:grid;place-items:end;padding:130px 0 60px;position:relative;color:white;overflow:hidden;background:#2b2925}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#161512c9 0%,#16151266 45%,#16151215),url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=85") center/cover}
+.hero-content{position:relative;z-index:1;width:100%}.eyebrow{font-size:11px;letter-spacing:.25em;text-transform:uppercase;margin-bottom:20px;color:#e7dfd1}.hero h1{font-family:"Playfair Display",serif;font-size:clamp(55px,8vw,112px);line-height:.94;font-weight:500;max-width:850px;letter-spacing:-.03em}.hero p{max-width:550px;margin:28px 0;color:#eee9df;font-size:16px}.hero-actions{display:flex;gap:12px}.btn.light{border-color:#fff;color:#fff;background:#ffffff14}.scroll{position:absolute;right:0;bottom:8px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;writing-mode:vertical-rl;color:#ddd}
+section{padding:110px 0}.section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:55px}.kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}.section-title{font-family:"Playfair Display",serif;font-size:clamp(38px,5vw,65px);font-weight:500;line-height:1.02;letter-spacing:-.02em}.section-intro{max-width:430px;color:var(--muted);font-size:14px}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:90px;align-items:center}.image{overflow:hidden;background:#ddd}.image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s}.image:hover img{transform:scale(1.035)}.about-img{height:650px}.about-copy p{color:var(--muted);max-width:530px;margin:25px 0 35px}.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);padding-top:25px;gap:20px}.stat strong{font-family:"Playfair Display";font-size:31px;font-weight:500}.stat span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+.services{background:var(--ink);color:white}.services .kicker{color:#c6a477}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #ffffff26}.service{padding:35px 25px 45px 0;border-bottom:1px solid #ffffff26;min-height:220px}.service:not(:nth-child(3n)){border-right:1px solid #ffffff26;padding-right:35px}.service:nth-child(n+4){padding-top:45px}.service-num{font-size:11px;color:#b9aa94}.service h3{font-family:"Playfair Display";font-size:28px;font-weight:500;margin:40px 0 12px}.service p{color:#bdb9b0;font-size:13px;max-width:300px}
+.projects-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.project{position:relative;overflow:hidden;background:#ddd}.project img{width:100%;height:100%;object-fit:cover;transition:.7s}.project:hover img{transform:scale(1.04)}.project.large{height:620px}.project.small{height:301px}.side-projects{display:grid;gap:18px}.project-info{position:absolute;left:22px;right:22px;bottom:20px;color:white;z-index:2}.project-info small{font-size:10px;text-transform:uppercase;letter-spacing:.15em}.project-info h3{font-family:"Playfair Display";font-size:25px;font-weight:500}.project:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,#0009)}
+.process{background:#eae5db}.process-grid{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line)}.step{padding:30px 25px 20px 0;border-right:1px solid var(--line);margin-right:25px;min-height:180px}.step:last-child{border:0}.step b{font-size:11px;color:var(--accent)}.step h3{font-family:"Playfair Display";font-size:24px;margin:25px 0 10px;font-weight:500}.step p{font-size:12px;color:var(--muted)}
+.testimonials{display:grid;grid-template-columns:.7fr 1.3fr;gap:100px}.quote{border-top:1px solid var(--line);padding:30px 0}.quote p{font-family:"Playfair Display";font-size:27px;line-height:1.35}.quote small{display:block;margin-top:20px;color:var(--muted)}
+.cta{background:#292720;color:white;text-align:center;padding:120px 20px}.cta .section-title{max-width:800px;margin:auto}.cta p{color:#c4c0b7;max-width:550px;margin:22px auto 30px}.cta .btn{border-color:white}
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:100px}.contact-info p{color:var(--muted);margin:20px 0 30px;max-width:390px}.contact-list{display:grid;gap:16px;font-size:14px}.contact-list span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--accent);margin-bottom:2px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}input,select,textarea{font:inherit;background:transparent;border:0;border-bottom:1px solid var(--line);padding:12px 0;outline:0;color:var(--ink)}textarea{resize:vertical;min-height:100px}.form-btn{margin-top:10px;border:0;cursor:pointer}
+footer{background:#1d1c19;color:#aaa;padding:45px 0 25px}.footer-top{display:flex;justify-content:space-between;gap:40px;padding-bottom:40px;border-bottom:1px solid #ffffff18}.footer-brand{color:white;font-family:"Playfair Display";font-size:25px}.footer-links{display:flex;gap:24px;font-size:12px}.copyright{font-size:10px;padding-top:20px;display:flex;justify-content:space-between}
+.reveal{opacity:0;transform:translateY(25px);transition:.8s ease}.reveal.visible{opacity:1;transform:none}
+.toast{position:fixed;right:20px;bottom:20px;background:var(--ink);color:white;padding:14px 18px;font-size:12px;z-index:50;transform:translateY(100px);transition:.3s}.toast.show{transform:none}
+@media(max-width:850px){.container{width:min(var(--max),calc(100% - 32px))}.links,.nav .btn{display:none}.menu{display:block}.hero{min-height:780px}.hero h1{font-size:58px}.section-head,.about,.testimonials,.contact{grid-template-columns:1fr;display:grid;gap:30px}.about-img{height:470px}.stats{grid-template-columns:repeat(2,1fr)}.service-grid{grid-template-columns:1fr 1fr}.service:not(:nth-child(3n)){border-right:0;padding-right:15px}.service:nth-child(odd){border-right:1px solid #ffffff26;padding-right:20px}.projects-grid{grid-template-columns:1fr}.project.large{height:500px}.process-grid{grid-template-columns:1fr 1fr}.step:nth-child(2n){border-right:0}.contact{gap:60px}section{padding:80px 0}}
+@media(max-width:560px){.hero{min-height:700px}.hero h1{font-size:49px}.hero p{font-size:14px}.hero-actions{flex-direction:column;align-items:flex-start}.service-grid,.process-grid,form{grid-template-columns:1fr}.service,.service:nth-child(odd){border-right:0;padding-right:0}.project.small,.project.large{height:350px}.footer-top,.copyright{flex-direction:column;gap:20px}.footer-links{flex-wrap:wrap}.section-title{font-size:43px}}
+
+/* PREMIUM OVERRIDES */
+:root{--ink:#12110f;--muted:#8e887e;--paper:#eee9df;--cream:#d8d0c2;--line:#c9c0b1;--accent:#b49568;--gold:#c7a978}
+body{background:#eee9df;color:#171512;overflow-x:hidden}
+::selection{background:#b49568;color:#111}
+.cursor-dot{position:fixed;width:8px;height:8px;border-radius:50%;background:#fff;mix-blend-mode:difference;pointer-events:none;z-index:100;transform:translate(-50%,-50%);transition:transform .08s linear}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1px solid #fff;border-radius:50%;mix-blend-mode:difference;pointer-events:none;z-index:99;transform:translate(-50%,-50%);transition:width .25s,height .25s}
+body:has(a:hover) .cursor-ring{width:55px;height:55px}
+.nav{padding:24px 0;color:white}.nav.scrolled{color:#171512;background:#eee9dff2;border-bottom:1px solid #00000010}
+.nav.scrolled .logo,.nav.scrolled .links a{color:#171512}
+.nav .links{color:#eee9df}.nav .btn{border-color:#eee9df}.nav.scrolled .btn{border-color:#171512;background:#171512;color:white}
+.hero{min-height:100vh;background:#111}.hero:before{background:linear-gradient(90deg,#080706dd 0%,#08070655 50%,#08070620),url("https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=2400&q=90") center/cover;animation:heroZoom 14s ease-out forwards}
+@keyframes heroZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hero-content{padding-bottom:30px}.hero h1{font-size:clamp(58px,8.5vw,126px);letter-spacing:-.045em}.hero p{font-size:15px;max-width:500px}
+.eyebrow,.kicker{letter-spacing:.3em}
+.btn{position:relative;overflow:hidden;border-radius:0}.btn:before{content:"";position:absolute;inset:0;background:#b49568;transform:translateY(101%);transition:.35s;z-index:-1}.btn:hover:before{transform:translateY(0)}.btn{z-index:0}.btn.dark{background:#171512}
+section{position:relative}.section-title{letter-spacing:-.035em}.about-img,.project{box-shadow:0 25px 70px #1b17100d}
+.image img,.project img{filter:saturate(.86) contrast(1.02)}
+.services{background:#151411}.services .section-title{color:#f1ece3}.service{transition:background .4s,padding .4s}.service:hover{background:#ffffff08;padding-left:18px}
+.project{cursor:pointer}.project:after{transition:.4s}.project:hover:after{background:linear-gradient(transparent,#000b)}
+.project-info h3{transition:transform .4s}.project:hover .project-info h3{transform:translateX(8px)}
+.process{background:#e4ddd0}
+.cta{background:#151411;overflow:hidden}.cta:before{content:"";position:absolute;width:500px;height:500px;border:1px solid #b4956840;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);animation:pulseRing 5s ease-in-out infinite}
+@keyframes pulseRing{50%{width:700px;height:700px;opacity:.35}}
+.toast{border:1px solid #b49568;background:#171512}
+.whatsapp{position:fixed;right:24px;bottom:24px;width:58px;height:58px;border-radius:50%;background:#171512;color:#fff;display:grid;place-items:center;z-index:40;box-shadow:0 12px 30px #0004;border:1px solid #b49568;transition:.3s}.whatsapp:hover{transform:translateY(-5px) scale(1.05)}
+.whatsapp svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8}
+.lightbox{position:fixed;inset:0;background:#0c0b09f5;z-index:80;display:none;align-items:center;justify-content:center;padding:30px}.lightbox.open{display:flex}.lightbox img{max-width:min(1100px,92vw);max-height:82vh;object-fit:contain;box-shadow:0 30px 100px #000}.lightbox-close{position:absolute;right:30px;top:20px;color:white;font-size:35px;background:none;border:0;cursor:pointer}.lightbox-caption{position:absolute;bottom:28px;color:#ddd;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+@media(max-width:850px){.cursor-dot,.cursor-ring{display:none}.nav{padding:17px 0}.nav .links{display:none!important;position:fixed!important;top:68px!important;left:16px!important;right:16px!important;width:auto!important;background:#eee9df!important;color:#171512!important;border:1px solid #c9c0b1!important;padding:22px!important;gap:20px!important;box-shadow:0 20px 50px #0003!important}.nav .links.open{display:flex!important}.nav .links a{color:#171512!important}.nav .btn{display:none}.menu{color:inherit;display:block}.hero h1{font-size:57px}.whatsapp{right:18px;bottom:18px;width:54px;height:54px}}
+@media(max-width:560px){.hero h1{font-size:48px}.hero{min-height:760px}.about-img{height:430px}.cta:before{width:300px;height:300px}}
+</style>
+</head>
+<body>
+<div class="cursor-dot"></div><div class="cursor-ring"></div>
+<header class="nav" id="nav"><div class="container nav-inner">
+<a class="logo" href="#home">ATELIER HAVEN<span>INTERIOR STUDIO</span></a>
+<nav class="links"><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#process">Process</a><a href="#contact">Contact</a></nav>
+<a class="btn dark" href="#contact">Get a Consultation</a><button class="menu" id="menu" aria-label="Open menu">☰</button>
+</div></header>
+
+<main>
+<section class="hero" id="home"><div class="container hero-content reveal">
+<div class="eyebrow">Interior Architecture · Kolkata</div>
+<h1>Transforming spaces.<br>Creating experiences.</h1>
+<p>Thoughtfully designed interiors that bring together beauty, functionality and your unique lifestyle.</p>
+<div class="hero-actions"><a class="btn dark" href="#projects">Explore Projects</a><a class="btn light" href="#contact">Book a Consultation</a></div>
+</div><div class="container scroll">Scroll to explore</div></section>
+
+<section id="about"><div class="container about">
+<div class="image about-img reveal"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1300&q=85" alt="Elegant modern living room"></div>
+<div class="about-copy reveal"><div class="kicker">About the studio</div><h2 class="section-title">Spaces that feel like you.</h2><p>Atelier Haven is a modern interior design studio creating sophisticated, functional and deeply personal spaces. We combine thoughtful planning, timeless materials and contemporary aesthetics to make everyday environments feel exceptional.</p><a class="btn" href="#contact">Start Your Project</a>
+<div class="stats"><div class="stat"><strong>10+</strong><span>Years</span></div><div class="stat"><strong>150+</strong><span>Projects</span></div><div class="stat"><strong>120+</strong><span>Clients</span></div><div class="stat"><strong>25+</strong><span>Awards</span></div></div></div>
+</div></section>
+
+<section class="services" id="services"><div class="container"><div class="section-head reveal"><div><div class="kicker">What we do</div><h2 class="section-title">Designed around<br>your lifestyle.</h2></div><p class="section-intro">From a single room to a complete transformation, we create interiors that balance character, comfort and function.</p></div>
+<div class="service-grid">
+<div class="service reveal"><span class="service-num">01</span><h3>Residential Interiors</h3><p>Beautiful, comfortable homes designed around the people who live in them.</p></div>
+<div class="service reveal"><span class="service-num">02</span><h3>Living Room Design</h3><p>Sophisticated spaces where comfort meets contemporary aesthetics.</p></div>
+<div class="service reveal"><span class="service-num">03</span><h3>Bedroom Design</h3><p>Calm, personal retreats designed for rest and everyday comfort.</p></div>
+<div class="service reveal"><span class="service-num">04</span><h3>Kitchen Design</h3><p>Smart layouts, refined finishes and storage designed for modern living.</p></div>
+<div class="service reveal"><span class="service-num">05</span><h3>Commercial Interiors</h3><p>Workspaces that reflect your brand and support the way your team works.</p></div>
+<div class="service reveal"><span class="service-num">06</span><h3>Turnkey Solutions</h3><p>Complete project management from first concept to final handover.</p></div>
+</div></div></section>
+
+<section id="projects"><div class="container"><div class="section-head reveal"><div><div class="kicker">Selected work</div><h2 class="section-title">Spaces we've<br>transformed.</h2></div><p class="section-intro">A selection of demo projects showing our approach to modern, warm and timeless interiors.</p></div>
+<div class="projects-grid">
+<div class="project large reveal"><img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1400&q=85" alt="Luxury residential interior"><div class="project-info"><small>Residential · Kolkata</small><h3>Modern Elegance</h3></div></div>
+<div class="side-projects">
+<div class="project small reveal"><img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1000&q=85" alt="Contemporary apartment"><div class="project-info"><small>Apartment · Kolkata</small><h3>Contemporary Living</h3></div></div>
+<div class="project small reveal"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85" alt="Minimal interior"><div class="project-info"><small>Residence · West Bengal</small><h3>Minimalist Haven</h3></div></div>
+</div></div></div></section>
+
+<section class="process" id="process"><div class="container"><div class="section-head reveal"><div><div class="kicker">How we work</div><h2 class="section-title">From vision<br>to reality.</h2></div><p class="section-intro">A simple, transparent process designed to make your interior journey effortless.</p></div>
+<div class="process-grid">
+<div class="step reveal"><b>01</b><h3>Consultation</h3><p>We understand your requirements, lifestyle, preferences and budget.</p></div>
+<div class="step reveal"><b>02</b><h3>Concept</h3><p>We develop the creative direction, mood and overall design language.</p></div>
+<div class="step reveal"><b>03</b><h3>Design</h3><p>Layouts, materials, colours, furniture and detailed visualizations come together.</p></div>
+<div class="step reveal"><b>04</b><h3>Execution</h3><p>We bring the approved design to life with careful coordination.</p></div>
+<div class="step reveal"><b>05</b><h3>Handover</h3><p>Your finished space is delivered with attention to every final detail.</p></div>
+</div></div></section>
+
+<section><div class="container testimonials"><div class="reveal"><div class="kicker">Client stories</div><h2 class="section-title">What our clients say.</h2></div><div>
+<div class="quote reveal"><p>“The team understood exactly what we wanted and transformed our home beautifully. Every detail feels intentional.”</p><small>— Ananya S. · Residential Client</small></div>
+<div class="quote reveal"><p>“A smooth and professional experience from the first concept to the final execution. We couldn't be happier.”</p><small>— Rohan M. · Apartment Project</small></div>
+<div class="quote reveal"><p>“They found the perfect balance between aesthetics and functionality. Our home finally feels like us.”</p><small>— Priya & Arjun · Homeowners</small></div>
+</div></div></section>
+
+<section class="cta"><div class="container reveal"><div class="kicker">Your next chapter starts here</div><h2 class="section-title">Ready to transform your space?</h2><p>Tell us about your space, your ideas and your vision. Let's turn them into a beautifully designed reality.</p><a class="btn light" href="#contact">Book a Consultation</a></div></section>
+
+<section id="contact"><div class="container contact"><div class="contact-info reveal"><div class="kicker">Get in touch</div><h2 class="section-title">Let's create something beautiful.</h2><p>Have a project in mind? Share a few details and our studio will get back to you for a consultation.</p><div class="contact-list"><div><span>Phone</span>+91 98765 43210</div><div><span>Email</span>hello@atelierhaven.in</div><div><span>Studio</span>Kolkata, West Bengal</div></div></div>
+<form id="form" class="reveal">
+<div class="field"><label>Name</label><input required placeholder="Your name"></div><div class="field"><label>Phone</label><input required placeholder="+91"></div>
+<div class="field"><label>Email</label><input type="email" required placeholder="you@example.com"></div><div class="field"><label>Project type</label><select><option>Residential</option><option>Commercial</option><option>Kitchen</option><option>Bedroom</option><option>Turnkey</option></select></div>
+<div class="field full"><label>Message</label><textarea placeholder="Tell us about your project..."></textarea></div>
+<button class="btn dark form-btn full" type="submit">Send Enquiry</button>
+</form></div></section>
+</main>
+
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+<button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+<img id="lightboxImg" src="" alt="Project preview">
+<div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+<a class="whatsapp" href="https://wa.me/919876543210?text=Hello%20Atelier%20Haven%2C%20I%27d%20like%20to%20discuss%20an%20interior%20design%20project." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<svg viewBox="0 0 24 24"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.4-4.2A8.5 8.5 0 1 1 20.5 11.7Z"/><path d="M8.7 8.2c.2-.5.4-.5.7-.5h.5c.2 0 .4.1.5.4l.7 1.7c.1.2.1.4-.1.6l-.5.6c-.1.1-.1.3 0 .4.4.7 1 1.3 1.7 1.7.2.1.3.1.4 0l.7-.6c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.3.2.5-.1.5-.5 1.2-1 1.4-.5.2-1.2.2-2-.1-1.1-.4-2.2-1.1-3.1-2-.8-.8-1.5-1.8-1.9-2.8-.3-.8-.3-1.5 0-2Z"/></svg>
+</a>
+<footer><div class="container"><div class="footer-top"><div class="footer-brand">ATELIER HAVEN</div><div class="footer-links"><a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#contact">Contact</a><a href="#">Instagram</a></div></div><div class="copyright"><span>© 2026 Atelier Haven. Demo website.</span><span>Privacy · Terms</span></div></div></footer>
+<div class="toast" id="toast">Thank you! Your demo enquiry has been received.</div>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();document.getElementById('toast').classList.add('show');e.target.reset();setTimeout(()=>document.getElementById('toast').classList.remove('show'),3500)});
+
+const menu=document.getElementById('menu'), links=document.querySelector('.links');
+menu.addEventListener('click',()=>{links.classList.toggle('open');menu.textContent=links.classList.contains('open')?'×':'☰'});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.textContent='☰'}));
+
+/* Project lightbox */
+const lb=document.getElementById('lightbox'), lbImg=document.getElementById('lightboxImg'), lbCap=document.getElementById('lightboxCaption');
+document.querySelectorAll('.project').forEach(card=>card.addEventListener('click',()=>{
+ const img=card.querySelector('img'), title=card.querySelector('h3')?.textContent||'Project';
+ lbImg.src=img.src; lbImg.alt=img.alt; lbCap.textContent=title; lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+}));
+function closeLB(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+document.getElementById('lightboxClose').addEventListener('click',closeLB);
+lb.addEventListener('click',e=>{if(e.target===lb)closeLB()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLB()});
+
+/* Magnetic cursor on desktop */
+const dot=document.querySelector('.cursor-dot'), ring=document.querySelector('.cursor-ring');
+window.addEventListener('mousemove',e=>{dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px'});
+
+/* Slight parallax for hero content */
+window.addEventListener('scroll',()=>{const y=Math.min(scrollY,700);document.querySelector('.hero-content').style.transform=`translateY(${y*.08}px)`});
+
+</script>
+</body>
+</html>
