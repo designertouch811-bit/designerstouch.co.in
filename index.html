@@ -18,7 +18,7 @@ html{scroll-behavior:smooth}
 body{font-family:"DM Sans",sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
 a{text-decoration:none;color:inherit}.container{width:min(var(--max),calc(100% - 48px));margin:auto}
 .nav{position:fixed;z-index:20;top:0;left:0;right:0;padding:20px 0;transition:.3s}.nav.scrolled{background:rgba(245,242,235,.92);backdrop-filter:blur(16px);padding:13px 0;box-shadow:0 8px 30px #0000000b}
-.nav-inner{display:flex;align-items:center;justify-content:space-between}.logo{font-family:"DM Sans";font-size:9px;letter-spacing:.28em}.logo span{font-family:"Playfair Display",serif;font-size:25px;display:block;letter-spacing:.04em;color:#fea001;margin-top:-4px}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}.logo{font-family:"DM Sans";font-size:9px;letter-spacing:.28em}.logo span{font-family:"Playfair Display",serif;font-size:25px;display:block;letter-spacing:.04em;margin-top:-4px}
 .links{display:flex;gap:30px;font-size:13px;color:#4e4a44}.links a{position:relative}.links a:after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--ink);transition:.25s}.links a:hover:after{width:100%}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border:1px solid var(--ink);font-size:12px;font-weight:600;letter-spacing:.04em;transition:.25s}.btn.dark{background:#fea001;color:white}.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px #ffd38e}.menu{display:none;background:none;border:0;font-size:24px}
 .hero{min-height:100vh;display:grid;place-items:end;padding:130px 0 60px;position:relative;color:white;overflow:hidden;background:#2b2925}
@@ -48,6 +48,7 @@ body{background:#eee9df;color:#171512;overflow-x:hidden}
 body:has(a:hover) .cursor-ring{width:55px;height:55px}
 .nav{padding:24px 0;color:white}.nav.scrolled{color:#171512;background:#eee9dff2;border-bottom:1px solid #00000010}
 .nav.scrolled .logo,.nav.scrolled .links a{color:#171512}
+ .nav.scrolled .logo span,.nav.scrolled .links a{color:#171512}
 .nav .links{color:#eee9df}.nav .btn{border-color:#eee9df}.nav.scrolled .btn{border-color:#171512;background:#171512;color:white}
 .hero{min-height:100vh;background:#111}.hero:before{background:linear-gradient(90deg,#080706dd 0%,#08070655 50%,#08070620),url("https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=2400&q=90") center/cover;animation:heroZoom 14s ease-out forwards}
 @keyframes heroZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
